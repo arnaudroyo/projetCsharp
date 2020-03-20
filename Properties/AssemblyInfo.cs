@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("projetCsharp")]
+[assembly: AssemblyTitle("CsharpB2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("projetCsharp")]
+[assembly: AssemblyProduct("CsharpB2")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("62768fa3-a7b1-4c60-9b2e-9db81efe8387")]
+[assembly: Guid("d11b328f-5c88-436d-97bf-a3b684e98778")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //

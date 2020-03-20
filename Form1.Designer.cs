@@ -1,4 +1,4 @@
-﻿namespace projetCsharp
+﻿namespace CsharpB2
 {
     partial class Form1
     {

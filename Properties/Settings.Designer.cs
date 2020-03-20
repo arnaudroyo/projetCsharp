@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace projetCsharp.Properties
+namespace CsharpB2.Properties
 {
 
 
