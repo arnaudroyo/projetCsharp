@@ -1,4 +1,5 @@
 ﻿using System;
+using CsharpB2;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace CsharpB2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
+            GestionEvenement gestion = new GestionEvenement();
         }
     }
 }
