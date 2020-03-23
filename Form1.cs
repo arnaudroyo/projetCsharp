@@ -12,9 +12,16 @@ namespace CsharpB2
 {
     public partial class Form1 : Form
     {
+        private personne personneLogged;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public Form1(personne personneLogged)
+        {
+            this.personneLogged = personneLogged;
         }
     }
 }
