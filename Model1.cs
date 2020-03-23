@@ -45,6 +45,14 @@ namespace CsharpB2
             modelBuilder.Entity<personne>()
                 .Property(e => e.ville)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<personne>()
+                .Property(e => e.mail)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<personne>()
+                .Property(e => e.password)
+                .IsUnicode(false);
         }
     }
 }

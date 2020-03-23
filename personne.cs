@@ -22,5 +22,13 @@ namespace CsharpB2
         [Required]
         [StringLength(50)]
         public string ville { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string mail { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string password { get; set; }
     }
 }
