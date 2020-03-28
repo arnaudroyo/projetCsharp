@@ -14,14 +14,15 @@ namespace CsharpB2
     {
         private personne personneLogged;
 
-        public Form1()
-        {
-            InitializeComponent();
-        }
+
 
         public Form1(personne personneLogged)
         {
+            InitializeComponent();
             this.personneLogged = personneLogged;
+            Logged.Text = "Bonjour " + personneLogged.prenom;
+
         }
+
     }
 }

@@ -40,12 +40,14 @@ namespace CsharpB2
                 if (personneLogged != null)
                     {
                     MessageBox.Show("Vous êtes connectés", "login succed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
 
                     // Création du formulaire 1
                     Form1 form = new Form1(personneLogged);
-                    this.DialogResult = DialogResult.OK;
-                    //this.Close();
-                    }
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
                 else
                 {
                     MessageBox.Show("Mail ou mot de passe incorrect", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);

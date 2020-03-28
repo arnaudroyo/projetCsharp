@@ -28,13 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Logged = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // Logged
+            // 
+            this.Logged.AutoSize = true;
+            this.Logged.Location = new System.Drawing.Point(723, 405);
+            this.Logged.Name = "Logged";
+            this.Logged.Size = new System.Drawing.Size(0, 13);
+            this.Logged.TabIndex = 6;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(841, 516);
+            this.Controls.Add(this.Logged);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label Logged;
     }
 }
 

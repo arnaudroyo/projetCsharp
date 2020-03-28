@@ -15,5 +15,10 @@ namespace CsharpB2
             var p1 = model.personnes.Where(p => p.mail.Equals(mail)).Where(p => p.password.Equals(password));
             return p1.FirstOrDefault<personne>();
         }
+        public personne AfficherPersonneLogged(string mail, string password)
+        {
+            var p1 = model.personnes.Where(p => p.mail.Equals(mail)).Where(p => p.password.Equals(password));
+            return p1.FirstOrDefault<personne>();
+        }
     }
 }

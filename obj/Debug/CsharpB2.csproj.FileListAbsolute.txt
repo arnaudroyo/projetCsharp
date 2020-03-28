@@ -22,3 +22,4 @@ E:\EPSI\B2\C#\projetCsharp\projetCsharp\obj\Debug\CsharpB2.csproj.CopyComplete
 E:\EPSI\B2\C#\projetCsharp\projetCsharp\obj\Debug\CsharpB2.exe
 E:\EPSI\B2\C#\projetCsharp\projetCsharp\obj\Debug\CsharpB2.pdb
 E:\EPSI\B2\C#\projetCsharp\projetCsharp\obj\Debug\CsharpB2.Signin.resources
+E:\EPSI\B2\C#\projetCsharp\projetCsharp\obj\Debug\CsharpB2.Form1.resources
