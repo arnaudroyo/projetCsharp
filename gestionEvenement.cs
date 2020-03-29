@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Validation;
 
 namespace CsharpB2
 {
@@ -25,8 +26,26 @@ namespace CsharpB2
             model.evennements.Add(evennement);
 
             // Valide les changement dans la base de données 
-            if (model.SaveChanges() > 0)
-                return evennement;
+            try
+            {
+                if (model.SaveChanges() > 0)
+                    return evennement;
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
+
 
             return null;
         }
@@ -43,6 +62,15 @@ namespace CsharpB2
             var liste = model.evennements.Where(p => p.titre.StartsWith(titre));
             return liste.ToList();
         }
+
+        public List<evennement> TrouverTousLesEvennements()
+        {
+            var liste = model.evennements;
+        //    evennement beuleu = RechercherEvennement(5);
+         //   evennement[] liste2 = new evennement[] {beuleu}; 
+            return liste.ToList();
+        }
+
 
         // Modifier un enregistrement 
         public bool ModifierEvennement(evennement evennement)
