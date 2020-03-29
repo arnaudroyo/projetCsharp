@@ -49,6 +49,19 @@ namespace CsharpB2
             this.nb_participant = nb_participant;
             this.id_createur = id_createur;
         }
+        public evennement(string titre, int capacité_max, string adresse, string ville, string pays, DateTime date, int nb_participant, int id_createur)
+        {
+            this.titre = titre;
+            this.capacité_max = capacité_max;
+            this.adresse = adresse;
+            this.ville = ville;
+            this.pays = pays;
+            this.date = date;
+            this.nb_participant = nb_participant;
+            this.id_createur = id_createur;
+        }
+
+
         public evennement()
         {
 
