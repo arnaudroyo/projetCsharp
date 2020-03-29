@@ -61,4 +61,9 @@ namespace CsharpB2
             this.id_createur = id_createur;
         }
 
+        public evennement()
+        {
+
+        }
+    }
 }

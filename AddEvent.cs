@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsharpB2;
 
 namespace CsharpB2
 {
@@ -14,6 +15,7 @@ namespace CsharpB2
     {
 
         int creator_id = 0;
+        GestionEvenement manageEvent = new GestionEvenement();
 
         public AddEvent(personne personLogged)
         {
@@ -65,16 +67,24 @@ namespace CsharpB2
         {
 
             string title = txtTitle.Text;
-            //string id = txtTitle.Text;
-            string capacity = txtCapacity.Text;
-            string adress = txtTitle.Text;
+            int capacity = int.Parse(txtCapacity.Text);
+            string adress = txtAdress.Text;
             string city = txtCity.Text;
             string country = textCountry.Text;
             DateTime date = dtDatePickerDate.Value;
             int nb_participant = 1;
             int id_creator = creator_id;
-            //evennement event = new evennement(string title, int capacity, string adress, string city, string country, DateTime date, int nb_participant, int id_creator);
-            //GestionEvenement.AjouterEvennement(event);
+
+            evennement newEvent = new evennement(title, capacity, adress, city, country, date, nb_participant, id_creator);
+           if (newEvent != null)
+            {
+                manageEvent.AjouterEvennement(newEvent);
+                MessageBox.Show("The event has been created", "Creating event suceed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+            }
+           else
+            this.DialogResult = DialogResult.Cancel;
+
         }
     }
 }
