@@ -20,9 +20,14 @@ namespace CsharpB2
         {
             InitializeComponent();
             this.personneLogged = personneLogged;
-            Logged.Text = "Bonjour " + personneLogged.prenom;
+            Logged.Text = "Hello " + personneLogged.prenom;
 
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            AddEvent addform = new AddEvent(personneLogged);
+            addform.ShowDialog();
+        }
     }
 }

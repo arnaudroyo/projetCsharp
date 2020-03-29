@@ -49,9 +49,6 @@ namespace CsharpB2
             this.nb_participant = nb_participant;
             this.id_createur = id_createur;
         }
-        public evennement()
-        {
 
-        }
     }
 }
