@@ -26,8 +26,22 @@ namespace CsharpB2
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            AddEvent();
+        }
+
+        private void AddEvent()
+        {
+            // Création du formulaire
             AddEvent addform = new AddEvent(personneLogged);
-            addform.ShowDialog();
+            // Appel du formualire en mode "Modal"
+            if (addform.ShowDialog() == DialogResult.OK)
+            {
+                // Validation du formulaire : modification dans la listview
+                /*if (lvEvennement.AddEvennement(evennement: addform.ActualEvent) == null)
+                {
+                    MessageBox.Show("L'event n'a pas pu être ajouté", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }*/
+            }
         }
     }
 }

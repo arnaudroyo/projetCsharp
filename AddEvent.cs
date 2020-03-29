@@ -13,14 +13,17 @@ namespace CsharpB2
 {
     public partial class AddEvent : Form
     {
+        personne personLoggedGlobal = new personne();
 
-        int creator_id = 0;
         GestionEvenement manageEvent = new GestionEvenement();
+
+        public evennement ActualEvent { get; internal set; }
+
 
         public AddEvent(personne personLogged)
         {
             InitializeComponent();
-            creator_id = personLogged.id;
+            personLoggedGlobal = personLogged;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -73,7 +76,7 @@ namespace CsharpB2
             string country = textCountry.Text;
             DateTime date = dtDatePickerDate.Value;
             int nb_participant = 1;
-            int id_creator = creator_id;
+            int id_creator = personLoggedGlobal.id;
 
             evennement newEvent = new evennement(title, capacity, adress, city, country, date, nb_participant, id_creator);
            if (newEvent != null)
@@ -81,6 +84,7 @@ namespace CsharpB2
                 manageEvent.AjouterEvennement(newEvent);
                 MessageBox.Show("The event has been created", "Creating event suceed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
+
             }
            else
             this.DialogResult = DialogResult.Cancel;
