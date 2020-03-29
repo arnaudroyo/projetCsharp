@@ -103,6 +103,7 @@
             this.Controls.Add(this.mail);
             this.Name = "Signin";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Signin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

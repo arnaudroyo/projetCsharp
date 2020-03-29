@@ -48,4 +48,7 @@ C:\Users\sean\source\repos\arnaudroyo\projetCsharp\obj\Debug\CsharpB2.csproj.Gen
 C:\Users\sean\source\repos\arnaudroyo\projetCsharp\obj\Debug\CsharpB2.csproj.CopyComplete
 C:\Users\sean\source\repos\arnaudroyo\projetCsharp\obj\Debug\CsharpB2.exe
 C:\Users\sean\source\repos\arnaudroyo\projetCsharp\obj\Debug\CsharpB2.pdb
+<<<<<<< HEAD
 E:\EPSI\B2\C#\projetCsharp\projetCsharp\obj\Debug\CsharpB2.AddEvent.resources
+=======
+>>>>>>> 5d4da69f8bb2604bfb36a38ce02047c45832a1fd
