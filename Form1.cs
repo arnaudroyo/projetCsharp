@@ -24,10 +24,29 @@ namespace CsharpB2
 
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            GestionEvenement gestion = new GestionEvenement();
+            var evennements = gestion.TrouverTousLesEvennements();
+            lvEvennement.Columns.Clear();
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "titre", Text = "Titre", Width = 120 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "capacité_max", Text = "Capacité_max", Width = 100 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "adresse", Text = "Adresse", Width = 80 });
+            lvEvennement.Items.Clear();
+            foreach (evennement evennement in evennements)
+            {
+                Console.WriteLine(evennement.capacité_max);
+                lvEvennement.AddEvennement(evennement);
+            }
+        }
+
+
+        private void btnAddEvent_Click(object sender, EventArgs e)
         {
             AddEvent();
+
         }
+
 
         private void AddEvent()
         {
@@ -37,11 +56,30 @@ namespace CsharpB2
             if (addform.ShowDialog() == DialogResult.OK)
             {
                 // Validation du formulaire : modification dans la listview
-                /*if (lvEvennement.AddEvennement(evennement: addform.ActualEvent) == null)
+                if (lvEvennement.AddEvennement(evennement: addform.ActualEvent) == null)
                 {
-                    MessageBox.Show("L'event n'a pas pu être ajouté", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }*/
+                   // MessageBox.Show("L'event n'a pas pu être ajouté", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
+
+    }
+    static class ListviewExtensions
+    {
+        public static ListViewItem AddEvennement(this ListView lv, evennement evennement)
+        {
+            if (evennement == null)
+                return null;
+
+            ListViewItem lvi = new ListViewItem(new string[] { evennement.titre, evennement.capacité_max.ToString("C"), evennement.adresse });
+            // On stocke l'objet Personne pour le réutiliser plus tard
+            lvi.Tag = evennement;
+            lv.Items.Add(lvi);
+
+            return lvi;
+        }
+
+
     }
 }

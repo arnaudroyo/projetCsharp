@@ -63,5 +63,10 @@ namespace CsharpB2
         {
             this.Close();
         }
+
+        private void Signin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

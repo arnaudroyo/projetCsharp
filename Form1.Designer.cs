@@ -29,38 +29,53 @@
         private void InitializeComponent()
         {
             this.Logged = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.lvEvennement = new System.Windows.Forms.ListView();
+            this.btnAddEvent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Logged
             // 
             this.Logged.AutoSize = true;
-            this.Logged.Location = new System.Drawing.Point(701, 21);
+            this.Logged.Location = new System.Drawing.Point(685, 26);
             this.Logged.Name = "Logged";
-            this.Logged.Size = new System.Drawing.Size(78, 13);
+            this.Logged.Size = new System.Drawing.Size(29, 13);
             this.Logged.TabIndex = 6;
-            this.Logged.Text = "Hello + prénom";
+            this.Logged.Text = "hello";
             // 
-            // btnOK
+            // lvEvennement
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnOK.Location = new System.Drawing.Point(669, 468);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(140, 36);
-            this.btnOK.TabIndex = 16;
-            this.btnOK.Text = "Create event";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.lvEvennement.FullRowSelect = true;
+            this.lvEvennement.GridLines = true;
+            this.lvEvennement.HideSelection = false;
+            this.lvEvennement.Location = new System.Drawing.Point(12, 65);
+            this.lvEvennement.Name = "lvEvennement";
+            this.lvEvennement.Size = new System.Drawing.Size(800, 219);
+            this.lvEvennement.TabIndex = 9;
+            this.lvEvennement.UseCompatibleStateImageBehavior = false;
+            this.lvEvennement.View = System.Windows.Forms.View.Details;
+            // 
+            // btnAddEvent
+            // 
+            this.btnAddEvent.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAddEvent.Location = new System.Drawing.Point(672, 468);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(140, 36);
+            this.btnAddEvent.TabIndex = 16;
+            this.btnAddEvent.Text = "Create new event";
+            this.btnAddEvent.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 516);
-            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnAddEvent);
+            this.Controls.Add(this.lvEvennement);
             this.Controls.Add(this.Logged);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,7 +84,8 @@
         #endregion
 
         private System.Windows.Forms.Label Logged;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.ListView lvEvennement;
+        private System.Windows.Forms.Button btnAddEvent;
     }
 }
 
