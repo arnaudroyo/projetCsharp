@@ -26,11 +26,6 @@ namespace CsharpB2
             personLoggedGlobal = personLogged;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void txtId_TextChanged(object sender, EventArgs e)
         {
 
@@ -82,13 +77,12 @@ namespace CsharpB2
            if (newEvent != null)
             {
                 manageEvent.AjouterEvennement(newEvent);
-                MessageBox.Show("The event has been created", "Creating event suceed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("The event has been created", "Creating event succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ActualEvent = newEvent;
                 this.DialogResult = DialogResult.OK;
-
             }
            else
-            this.DialogResult = DialogResult.Cancel;
-
+                this.DialogResult = DialogResult.Cancel;
         }
     }
 }

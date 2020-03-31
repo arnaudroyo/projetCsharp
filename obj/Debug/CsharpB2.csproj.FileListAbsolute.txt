@@ -77,3 +77,5 @@ E:\EPSI\B2\C#\projetCsharp\bin\Debug\MySql.Data.xml
 E:\EPSI\B2\C#\projetCsharp\bin\Debug\MySql.Data.EntityFramework.xml
 E:\EPSI\B2\C#\projetCsharp\bin\Debug\Renci.SshNet.xml
 E:\EPSI\B2\C#\projetCsharp\obj\Debug\CsharpB2.csproj.CopyComplete
+E:\EPSI\B2\C#\projetCsharp\obj\Debug\CsharpB2.AddEvent.resources
+E:\EPSI\B2\C#\projetCsharp\obj\Debug\CsharpB2.Signup.resources

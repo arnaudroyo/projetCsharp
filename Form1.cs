@@ -63,7 +63,7 @@ namespace CsharpB2
                 // Validation du formulaire : modification dans la listview
                 if (lvEvennement.AddEvennement(evennement: addform.ActualEvent) == null)
                 {
-                   // MessageBox.Show("L'event n'a pas pu être ajouté", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("L'event has not been added to the listview, restart app to view change", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -30,5 +30,22 @@ namespace CsharpB2
         [Required]
         [StringLength(50)]
         public string password { get; set; }
+
+        public personne(string name, string Fname, string city, string mail, string password)
+        {
+            this.nom = name;
+            this.prenom = Fname;
+            this.ville = city;
+            this.mail = mail;
+            this.password = password;
+        }
+
+
+        public personne()
+        {
+
+        }
+
     }
+
 }
