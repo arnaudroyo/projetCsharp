@@ -39,7 +39,7 @@ namespace CsharpB2
                 personneLogged = GestionP.RechercherPersonne(mailTest, passwordTest);
                 if (personneLogged != null)
                     {
-                    MessageBox.Show("Vous êtes connectés", "login succed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("You are connected", "login succed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
 
                     // Création du formulaire 1
@@ -50,7 +50,7 @@ namespace CsharpB2
                 }
                 else
                 {
-                    MessageBox.Show("Mail ou mot de passe incorrect", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Incorrect Mail or password", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else

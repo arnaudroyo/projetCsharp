@@ -85,7 +85,9 @@
     <Compile Include="AddEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEvent.Designer.cs" />
+    <Compile Include="AddEvent.Designer.cs">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="gestionEvenement.cs" />
     <Compile Include="GestionPersonne.cs" />
     <Compile Include="evennement.cs" />

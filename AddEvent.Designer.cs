@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.Country = new System.Windows.Forms.Label();
             this.dtDatePickerDate = new System.Windows.Forms.DateTimePicker();
             this.Date = new System.Windows.Forms.Label();
@@ -44,28 +42,9 @@
             this.Title = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Label();
             this.textCountry = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(406, 362);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(140, 36);
-            this.btnCancel.TabIndex = 31;
-            this.btnCancel.Text = "Annuler";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnOK
-            // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(175, 362);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(140, 36);
-            this.btnOK.TabIndex = 30;
-            this.btnOK.Text = "Valider";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // Country
             // 
@@ -82,7 +61,6 @@
             this.dtDatePickerDate.Name = "dtDatePickerDate";
             this.dtDatePickerDate.Size = new System.Drawing.Size(200, 20);
             this.dtDatePickerDate.TabIndex = 27;
-            this.dtDatePickerDate.ValueChanged += new System.EventHandler(this.dtDatePickerDate_ValueChanged);
             // 
             // Date
             // 
@@ -99,7 +77,6 @@
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 20);
             this.txtCity.TabIndex = 25;
-            this.txtCity.TextChanged += new System.EventHandler(this.txtCity_TextChanged);
             // 
             // txtTitle
             // 
@@ -108,7 +85,6 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(100, 20);
             this.txtTitle.TabIndex = 19;
-            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // txtAdress
             // 
@@ -116,7 +92,6 @@
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(100, 20);
             this.txtAdress.TabIndex = 21;
-            this.txtAdress.TextChanged += new System.EventHandler(this.txtAdress_TextChanged);
             // 
             // txtCapacity
             // 
@@ -124,7 +99,6 @@
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(100, 20);
             this.txtCapacity.TabIndex = 23;
-            this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
             // 
             // txtId
             // 
@@ -133,7 +107,6 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 17;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // City
             // 
@@ -186,16 +159,35 @@
             this.textCountry.Name = "textCountry";
             this.textCountry.Size = new System.Drawing.Size(100, 20);
             this.textCountry.TabIndex = 32;
-            this.textCountry.TextChanged += new System.EventHandler(this.textCountry_TextChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(382, 364);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(140, 36);
+            this.btnCancel.TabIndex = 34;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(151, 364);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(140, 36);
+            this.btnOK.TabIndex = 33;
+            this.btnOK.Text = "Ok";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // AddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textCountry);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.textCountry);
             this.Controls.Add(this.Country);
             this.Controls.Add(this.dtDatePickerDate);
             this.Controls.Add(this.Date);
@@ -217,9 +209,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label Country;
         private System.Windows.Forms.DateTimePicker dtDatePickerDate;
         private System.Windows.Forms.Label Date;
@@ -234,5 +223,7 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.TextBox textCountry;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOK;
     }
 }
