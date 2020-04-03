@@ -39,7 +39,6 @@ namespace CsharpB2
                 personneLogged = GestionP.RechercherPersonne(mailTest, passwordTest);
                 if (personneLogged != null)
                     {
-                    MessageBox.Show("You are connected", "login succed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
 
                     // Création du formulaire 1

@@ -53,6 +53,7 @@
             this.lvEvennement.TabIndex = 9;
             this.lvEvennement.UseCompatibleStateImageBehavior = false;
             this.lvEvennement.View = System.Windows.Forms.View.Details;
+            this.lvEvennement.SelectedIndexChanged += new System.EventHandler(this.lvEvennement_DoubleClick);
             // 
             // btnAddEvent
             // 
