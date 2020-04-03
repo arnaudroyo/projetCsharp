@@ -39,6 +39,15 @@ namespace CsharpB2
             this.mail = mail;
             this.password = password;
         }
+        public personne(int id, string name, string Fname, string city, string mail, string password)
+        {
+            this.id = id;
+            this.nom = name;
+            this.prenom = Fname;
+            this.ville = city;
+            this.mail = mail;
+            this.password = password;
+        }
 
 
         public personne()

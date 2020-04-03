@@ -39,6 +39,7 @@ namespace CsharpB2
                 this.txtId.Text = eventClicked.id.ToString();
                 this.txtTitle.Text = eventClicked.titre;
                 this.txtAddress.Text = eventClicked.adresse;
+                this.txtCity.Text = eventClicked.ville;
                 this.txtCapacity.Text = eventClicked.capacité_max.ToString();
                 this.dtDatePickerDate.Value = eventClicked.date;
 
@@ -46,6 +47,7 @@ namespace CsharpB2
                 {
                     this.txtTitle.Enabled = true;
                     this.txtAddress.Enabled = true;
+                    this.txtCity.Enabled = true;
                     this.txtCapacity.Enabled = true;
                     this.dtDatePickerDate.Enabled = true;
                     this.btnOK.Enabled = true;
@@ -58,6 +60,7 @@ namespace CsharpB2
 
             eventClicked.titre = this.txtTitle.Text;
             eventClicked.adresse = this.txtAddress.Text;
+            eventClicked.ville = this.txtCity.Text;
             eventClicked.capacité_max = Int16.Parse(this.txtCapacity.Text);
             eventClicked.date = this.dtDatePickerDate.Value;
 

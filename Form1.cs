@@ -31,7 +31,8 @@ namespace CsharpB2
             GestionEvenement gestion = new GestionEvenement();
             var evennements = gestion.TrouverTousLesEvennements();
             lvEvennement.Columns.Clear();
-            lvEvennement.Columns.Add(new ColumnHeader() { Name = "titre", Text = "Titre", Width = 120 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "id", Text = "Id", Width = 30 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "title", Text = "Titre", Width = 120 });
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "capacité_max", Text = "Capacité_max", Width = 100 });
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "nb_participant", Text = "Nombre participants", Width = 120 });
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "adresse", Text = "Adresse", Width = 80 });
@@ -110,7 +111,7 @@ namespace CsharpB2
             if (evennement == null)
                 return null;
 
-            ListViewItem lvi = new ListViewItem(new string[] { evennement.titre, evennement.capacité_max.ToString(), evennement.nb_participant.ToString(), evennement.adresse, evennement.ville, evennement.date.ToString() });
+            ListViewItem lvi = new ListViewItem(new string[] {evennement.id.ToString(), evennement.titre, evennement.capacité_max.ToString(), evennement.nb_participant.ToString(), evennement.adresse, evennement.ville, evennement.date.ToString() });
             // On stocke l'objet Personne pour le réutiliser plus tard
             lvi.Tag = evennement;
             lv.Items.Add(lvi);
@@ -126,12 +127,14 @@ namespace CsharpB2
             ListViewItem lvi = lv.FindItemWithText(eventclicked.id.ToString());
             if (lvi != null)
             {
-                lvi.SubItems[3].Text = eventclicked.adresse.ToString();
-                lvi.SubItems[4].Text = eventclicked.capacité_max.ToString();
-                lvi.SubItems[5].Text = eventclicked.date.ToString();
+                lvi.SubItems[1].Text = eventclicked.titre.ToString();
+                lvi.SubItems[2].Text = eventclicked.capacité_max.ToString();
+                lvi.SubItems[3].Text = eventclicked.nb_participant.ToString();
+                lvi.SubItems[4].Text = eventclicked.adresse.ToString();
+                lvi.SubItems[5].Text = eventclicked.ville.ToString();
+                //lvi.SubItems[6] = eventclicked.date;
                 lvi.Tag = eventclicked;
             }
-
             return lvi;
         }
 

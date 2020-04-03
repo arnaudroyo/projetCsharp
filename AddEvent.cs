@@ -29,7 +29,7 @@ namespace CsharpB2
             string city = txtCity.Text;
             string country = textCountry.Text;
             DateTime date = dtDatePickerDate.Value;
-            int nb_participant = 1;
+            int nb_participant = 0;
             int id_creator = personLoggedGlobal.id;
 
             var capacityIsNumeric = int.TryParse(txtCapacity.Text, out int capacity);

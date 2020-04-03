@@ -41,12 +41,14 @@
             this.titre = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Label();
             this.participate = new System.Windows.Forms.Button();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.city = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(311, 315);
+            this.btnCancel.Location = new System.Drawing.Point(310, 341);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 36);
             this.btnCancel.TabIndex = 31;
@@ -57,7 +59,7 @@
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnOK.Enabled = false;
-            this.btnOK.Location = new System.Drawing.Point(76, 315);
+            this.btnOK.Location = new System.Drawing.Point(75, 341);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(140, 36);
             this.btnOK.TabIndex = 30;
@@ -68,7 +70,7 @@
             // dtDatePickerDate
             // 
             this.dtDatePickerDate.Enabled = false;
-            this.dtDatePickerDate.Location = new System.Drawing.Point(208, 200);
+            this.dtDatePickerDate.Location = new System.Drawing.Point(207, 226);
             this.dtDatePickerDate.Name = "dtDatePickerDate";
             this.dtDatePickerDate.Size = new System.Drawing.Size(200, 20);
             this.dtDatePickerDate.TabIndex = 27;
@@ -76,7 +78,7 @@
             // Date
             // 
             this.Date.AutoSize = true;
-            this.Date.Location = new System.Drawing.Point(106, 200);
+            this.Date.Location = new System.Drawing.Point(105, 226);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(30, 13);
             this.Date.TabIndex = 26;
@@ -102,7 +104,7 @@
             // txtCapacity
             // 
             this.txtCapacity.Enabled = false;
-            this.txtCapacity.Location = new System.Drawing.Point(208, 150);
+            this.txtCapacity.Location = new System.Drawing.Point(208, 189);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(100, 20);
             this.txtCapacity.TabIndex = 23;
@@ -118,7 +120,7 @@
             // capacity_max
             // 
             this.capacity_max.AutoSize = true;
-            this.capacity_max.Location = new System.Drawing.Point(106, 150);
+            this.capacity_max.Location = new System.Drawing.Point(106, 189);
             this.capacity_max.Name = "capacity_max";
             this.capacity_max.Size = new System.Drawing.Size(94, 13);
             this.capacity_max.TabIndex = 22;
@@ -153,7 +155,7 @@
             // 
             // participate
             // 
-            this.participate.Location = new System.Drawing.Point(222, 244);
+            this.participate.Location = new System.Drawing.Point(222, 284);
             this.participate.Name = "participate";
             this.participate.Size = new System.Drawing.Size(86, 42);
             this.participate.TabIndex = 32;
@@ -161,11 +163,30 @@
             this.participate.UseVisualStyleBackColor = true;
             this.participate.Click += new System.EventHandler(this.participate_Click);
             // 
+            // txtCity
+            // 
+            this.txtCity.Enabled = false;
+            this.txtCity.Location = new System.Drawing.Point(208, 148);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCity.TabIndex = 34;
+            // 
+            // city
+            // 
+            this.city.AutoSize = true;
+            this.city.Location = new System.Drawing.Point(106, 148);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(24, 13);
+            this.city.TabIndex = 33;
+            this.city.Text = "City";
+            // 
             // FormEditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 389);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.city);
             this.Controls.Add(this.participate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -201,5 +222,7 @@
         private System.Windows.Forms.Label titre;
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.Button participate;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.Label city;
     }
 }
