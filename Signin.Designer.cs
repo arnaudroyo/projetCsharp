@@ -75,7 +75,7 @@
             this.btnOK.Location = new System.Drawing.Point(45, 182);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(140, 36);
-            this.btnOK.TabIndex = 15;
+            this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Valider";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);

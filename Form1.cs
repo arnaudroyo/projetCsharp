@@ -14,7 +14,7 @@ namespace CsharpB2
     {
         private personne personneLogged;
 
-
+        GestionEvenement gestionEvent = new GestionEvenement();
 
         public Form1(personne personneLogged)
         {
@@ -28,17 +28,19 @@ namespace CsharpB2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            GestionEvenement gestion = new GestionEvenement();
-            var evennements = gestion.TrouverTousLesEvennements();
+           
+            var evennements = gestionEvent.TrouverTousLesEvennements();
+
+
             lvEvennement.Columns.Clear();
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "id", Text = "Id", Width = 30 });
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "title", Text = "Titre", Width = 120 });
-            lvEvennement.Columns.Add(new ColumnHeader() { Name = "capacité_max", Text = "Capacité_max", Width = 100 });
-            lvEvennement.Columns.Add(new ColumnHeader() { Name = "nb_participant", Text = "Nombre participants", Width = 120 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "capacité_max", Text = "Capacité_max", Width = 50 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "nb_participant", Text = "Nombre participants", Width = 50 });
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "adresse", Text = "Adresse", Width = 80 });
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "ville", Text = "Ville", Width = 80 });
-
             lvEvennement.Columns.Add(new ColumnHeader() { Name = "date", Text = "Date", Width = 150 });
+            lvEvennement.Columns.Add(new ColumnHeader() { Name = "creator", Text = "Creator", Width = 90 });
             lvEvennement.Items.Clear();
             foreach (evennement evennement in evennements)
             {
@@ -106,12 +108,19 @@ namespace CsharpB2
 }
     static class ListviewExtensions
     {
+
+        
+
         public static ListViewItem AddEvennement(this ListView lv, evennement evennement)
         {
-            if (evennement == null)
+            GestionEvenement gestionEvent = new GestionEvenement();
+            personne creator = new personne();
+            creator = gestionEvent.RechercherCreateurById(evennement.id_createur);
+
+            if (evennement == null || creator == null)
                 return null;
 
-            ListViewItem lvi = new ListViewItem(new string[] {evennement.id.ToString(), evennement.titre, evennement.capacité_max.ToString(), evennement.nb_participant.ToString(), evennement.adresse, evennement.ville, evennement.date.ToString() });
+            ListViewItem lvi = new ListViewItem(new string[] {evennement.id.ToString(), evennement.titre, evennement.capacité_max.ToString(), evennement.nb_participant.ToString(), evennement.adresse, evennement.ville, evennement.date.ToString(), creator.prenom });
             // On stocke l'objet Personne pour le réutiliser plus tard
             lvi.Tag = evennement;
             lv.Items.Add(lvi);

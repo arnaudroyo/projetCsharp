@@ -62,6 +62,12 @@ namespace CsharpB2
             var liste = model.evennements.Where(p => p.titre.StartsWith(titre));
             return liste.ToList();
         }
+        // Rechercher le créateur de l'event
+        public personne RechercherCreateurById(int id_creatoriInEvent)
+        {
+            var creator = model.personnes.Where(p => p.id.Equals(id_creatoriInEvent));
+            return creator.FirstOrDefault();
+        }
 
         public List<evennement> TrouverTousLesEvennements()
         {
