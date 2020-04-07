@@ -49,7 +49,7 @@ namespace CsharpB2
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect Mail or password", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bad mail or password", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else

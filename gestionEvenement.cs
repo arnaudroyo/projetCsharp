@@ -9,9 +9,11 @@ using System.Data.Entity.Validation;
 
 namespace CsharpB2
 {
+
     public class GestionEvenement
     {
         private Model1 model = new Model1();
+        public static DateTime Today { get; }
 
         // Lister tous les enregistrements
         public List<evennement> ChargerEvennement()
@@ -111,6 +113,30 @@ namespace CsharpB2
             }
 
             return false;
+        }
+
+        // Rechercher le créateur de l'event
+        public string GetStatus(evennement Event)
+        {
+            DateTime thisDay = DateTime.Today;
+
+            if (Event != null){
+                int result = DateTime.Compare(Event.date, thisDay);
+                if (result < 0)
+                {
+                    return "Over";
+                }
+                else if (result == 0)
+                {
+                    return "Today";
+                }
+                else if (result > 0)
+                {
+                    return "Soon";
+                }
+                else return null;
+            }
+            else return null;
         }
 
     }
