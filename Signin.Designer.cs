@@ -42,14 +42,14 @@
             this.txtPassword.Location = new System.Drawing.Point(186, 106);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(159, 20);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 2;
             // 
             // txtMail
             // 
             this.txtMail.Location = new System.Drawing.Point(186, 68);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(159, 20);
-            this.txtMail.TabIndex = 4;
+            this.txtMail.TabIndex = 1;
             // 
             // password
             // 
@@ -75,7 +75,7 @@
             this.btnOK.Location = new System.Drawing.Point(45, 182);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(140, 36);
-            this.btnOK.TabIndex = 1;
+            this.btnOK.TabIndex = 3;
             this.btnOK.Text = "Valider";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -86,7 +86,7 @@
             this.btnCancel.Location = new System.Drawing.Point(245, 182);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 36);
-            this.btnCancel.TabIndex = 16;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);

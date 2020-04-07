@@ -113,6 +113,20 @@ namespace CsharpB2
             return false;
         }
 
+        public List<evennement> TrouverEvennementsUtilisateur(personne personne)
+        {
+
+            var listInscrit = model.inscris.Where(p => p.id_personne.Equals(personne.id)).ToList();
+            List<evennement> listEvent = new List<evennement>();
+            foreach (inscri i in listInscrit)
+            {
+                listEvent.AddRange(model.evennements.Where(e => e.id.Equals(i.id_evennement)).ToList());
+
+            }
+            return listEvent;
+        }
+
+
         // Rechercher le créateur de l'event
         public string GetStatus(evennement Event)
         {

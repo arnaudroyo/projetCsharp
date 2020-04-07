@@ -55,5 +55,32 @@ namespace CsharpB2
 
 
         }
+
+        public bool SupprimerInscription(inscri Inscription)
+        {
+            if (Inscription != null)
+            {
+                // Supprime le produit dans l'ORM 
+                model.inscris.Remove(Inscription);
+
+                // Valide les changement dans la base de données 
+                return (model.SaveChanges() > 0);
+            }
+
+            return false;
+        }
+
+        public inscri RechercherInscription(evennement Event, personne person)
+        {
+            try
+            {
+                var p1 = model.inscris.Where(p => p.id_personne.Equals(person.id)).Where(p => p.id_evennement.Equals(Event.id));
+                return p1.FirstOrDefault<inscri>();
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

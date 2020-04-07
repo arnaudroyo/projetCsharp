@@ -91,7 +91,7 @@ namespace CsharpB2
 
                     MessageBox.Show("You now participate in this event", "registration succed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.DialogResult = DialogResult.OK;
+                    this.DialogResult = DialogResult.Yes;
                 }
                 else
                 {

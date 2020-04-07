@@ -14,5 +14,14 @@ namespace CsharpB2
         public int id_personne { get; set; }
 
         public int id_evennement { get; set; }
+        public inscri(evennement Event, personne person)
+        {
+
+        }
+        public inscri()
+        {
+
+        }
     }
 }
+
