@@ -12,23 +12,41 @@ namespace CsharpB2
 {
     public partial class Form1 : Form
     {
-        private personne personneLogged;
+        private personne personLogged;
 
         GestionEvenement gestionEvent = new GestionEvenement();
 
+        public Form1()
+        {
+            InitializeComponent();
+        }
         public Form1(personne personneLogged)
         {
             InitializeComponent();
-
-            
-            this.personneLogged = personneLogged;
-            Logged.Text = "Bonjour " + personneLogged.prenom;
-
+            this.personLogged = personneLogged;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            if (this.personLogged == null)
+            {
+                // Création du formulaire de connexion
+                Signin login = new Signin();
+                // Appel du formualire en mode "Modal"
+                if (login.ShowDialog() == DialogResult.OK && login.personneLogged != null)
+                {
+
+                    this.personLogged = login.personneLogged;
+                    Logged.Text = "Bonjour " + this.personLogged.prenom;
+
+                }
+                else
+                    this.Close();
+            }
+          
+        
+          
+
             var evennements = gestionEvent.TrouverTousLesEvennements();
 
 
@@ -62,7 +80,7 @@ namespace CsharpB2
         private void AddEvent()
         {
             // Création du formulaire
-            AddEvent addform = new AddEvent(personneLogged);
+            AddEvent addform = new AddEvent(this.personLogged);
             // Appel du formualire en mode "Modal"
             if (addform.ShowDialog() == DialogResult.OK)
             {
@@ -87,7 +105,7 @@ namespace CsharpB2
             if (selected.Count == 1)
             {
                 // On récupère l'objet dans la propriété Tag pour le "caster" en objet Personne
-                ModifyEvent(selected[0].Tag as evennement, personneLogged);
+                ModifyEvent(selected[0].Tag as evennement, this.personLogged);
             }
 
         }
@@ -115,7 +133,7 @@ namespace CsharpB2
         public static ListViewItem AddEvennement(this ListView lv, evennement evennement)
         {
             GestionEvenement gestionEvent = new GestionEvenement();
-            personne creator = new personne();
+            personne creator;
             creator = gestionEvent.RechercherCreateurById(evennement.id_createur);
 
             string status = gestionEvent.GetStatus(evennement);

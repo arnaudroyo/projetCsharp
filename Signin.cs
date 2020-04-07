@@ -41,11 +41,6 @@ namespace CsharpB2
                     {
                     this.DialogResult = DialogResult.OK;
 
-                    // Création du formulaire 1
-                    Form1 form = new Form1(personneLogged);
-                    this.Hide();
-                    form.ShowDialog();
-                    this.Close();
                 }
                 else
                 {

@@ -35,12 +35,10 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.City = new System.Windows.Forms.Label();
             this.capacity = new System.Windows.Forms.Label();
             this.Adress = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.Label();
             this.textCountry = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -100,14 +98,6 @@
             this.txtCapacity.Size = new System.Drawing.Size(100, 20);
             this.txtCapacity.TabIndex = 23;
             // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(299, 54);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 17;
-            // 
             // City
             // 
             this.City.AutoSize = true;
@@ -143,15 +133,6 @@
             this.Title.Size = new System.Drawing.Size(27, 13);
             this.Title.TabIndex = 18;
             this.Title.Text = "Title";
-            // 
-            // id
-            // 
-            this.id.AutoSize = true;
-            this.id.Location = new System.Drawing.Point(197, 54);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(16, 13);
-            this.id.TabIndex = 16;
-            this.id.Text = "Id";
             // 
             // textCountry
             // 
@@ -196,12 +177,10 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtAdress);
             this.Controls.Add(this.txtCapacity);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.City);
             this.Controls.Add(this.capacity);
             this.Controls.Add(this.Adress);
             this.Controls.Add(this.Title);
-            this.Controls.Add(this.id);
             this.Name = "AddEvent";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -217,12 +196,10 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.TextBox txtCapacity;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label City;
         private System.Windows.Forms.Label capacity;
         private System.Windows.Forms.Label Adress;
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Label id;
         private System.Windows.Forms.TextBox textCountry;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
