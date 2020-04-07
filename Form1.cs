@@ -120,7 +120,7 @@ namespace CsharpB2
 
             string status = gestionEvent.GetStatus(evennement);
 
-            if (evennement == null || creator == null)
+            if (evennement == null || creator == null || status == null)
                 return null;
 
             ListViewItem lvi = new ListViewItem(new string[] {evennement.id.ToString(), evennement.titre, evennement.capacité_max.ToString(), evennement.nb_participant.ToString(), evennement.adresse, evennement.ville, evennement.date.ToString(), creator.prenom, status });

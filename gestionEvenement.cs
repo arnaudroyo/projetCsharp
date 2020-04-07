@@ -73,10 +73,8 @@ namespace CsharpB2
 
         public List<evennement> TrouverTousLesEvennements()
         {
-            var liste = model.evennements;
-        //    evennement beuleu = RechercherEvennement(5);
-         //   evennement[] liste2 = new evennement[] {beuleu}; 
-            return liste.ToList();
+            var liste = model.evennements; 
+            return liste.OrderByDescending(d => d.date).ToList();
         }
 
 
