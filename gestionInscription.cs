@@ -66,24 +66,25 @@ namespace CsharpB2
 
         }
 
-        public bool SupprimerInscription(inscri Inscription)
+        public evennement SupprimerInscription(inscri Inscription)
         {
             if (Inscription != null)
             {
 
                 // Supprime le produit dans l'ORM 
                 model.inscris.Remove(Inscription);
+                model.SaveChanges();
 
                 int nb = manageEvent.CountAllParticipants(Inscription.id_evennement);
                 evennement ev = manageEvent.RechercherEvennement(Inscription.id_evennement);
                 ev.nb_participant = nb;
                 manageEvent.ModifierEvennement(ev);
 
-                // Valide les changement dans la base de données 
-                return (model.SaveChanges() > 0);
+                return ev;
+
             }
 
-            return false;
+            return null;
         }
 
         public inscri RechercherInscription(evennement Event, personne person)

@@ -73,7 +73,7 @@ namespace CsharpB2
             eventClicked.titre = this.txtTitle.Text;
             eventClicked.adresse = this.txtAddress.Text;
             eventClicked.ville = this.txtCity.Text;
-            eventClicked.capacité_max = Int16.Parse(this.txtCapacity.Text);
+            eventClicked.capacité_max = Int32.Parse(this.txtCapacity.Text);
             eventClicked.date = this.dtDatePickerDate.Value;
 
             if (eventClicked != null)

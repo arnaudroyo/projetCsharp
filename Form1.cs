@@ -161,11 +161,13 @@ namespace CsharpB2
             }
             else if (form.DialogResult == DialogResult.Yes)
             {
-                if(lvEvennement2.AddEvennement(eventclicked) == null)
+                lvEvennement2.AddEvennement(eventclicked);
+                lvEvennement.UpdateEvent(eventclicked);
+/*                if (lvEvennement2.AddEvennement(eventclicked) == null && lvEvennement.UpdateEvent(eventclicked) == null);
                 {
                     MessageBox.Show("Prob to update ur registration", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
+                }*/
             }
 
         }
@@ -185,16 +187,10 @@ namespace CsharpB2
                 if(registration != null )
                 {
                     // Validation du formulaire : modification dans la listview
-                    if (manageRegistration.SupprimerInscription(registration) == true)
-                    {
-                        if (lvEvennement2.RemoveEvent(eventclicked) == null && lvEvennement.UpdateEvent(eventclicked) == null)
-                        {
-                            MessageBox.Show("Your unregistration has failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                        else
-                            MessageBox.Show("Your unregistration has suceeed", "Suceed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    var ev =  manageRegistration.SupprimerInscription(registration);
+                    
+                    lvEvennement2.RemoveEvent(eventclicked);
+                    lvEvennement.UpdateEvent(ev);
                 }
             }
         }
