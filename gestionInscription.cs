@@ -11,6 +11,8 @@ namespace CsharpB2
     {
         private Model1 model = new Model1();
 
+        GestionEvenement manageEvent = new GestionEvenement();
+
 
         public inscri Ajouterinscription(inscri inscription)
         {
@@ -20,8 +22,16 @@ namespace CsharpB2
             // Valide les changement dans la base de données 
             try
             {
+
                 if (model.SaveChanges() > 0)
+                {
+                    int nb = manageEvent.CountAllParticipants(inscription.id_evennement);
+                    evennement ev = manageEvent.RechercherEvennement(inscription.id_evennement);
+                    ev.nb_participant = nb;
+                    manageEvent.ModifierEvennement(ev);
+
                     return inscription;
+                }
             }
             catch (DbEntityValidationException e)
             {
@@ -60,8 +70,14 @@ namespace CsharpB2
         {
             if (Inscription != null)
             {
+
                 // Supprime le produit dans l'ORM 
                 model.inscris.Remove(Inscription);
+
+                int nb = manageEvent.CountAllParticipants(Inscription.id_evennement);
+                evennement ev = manageEvent.RechercherEvennement(Inscription.id_evennement);
+                ev.nb_participant = nb;
+                manageEvent.ModifierEvennement(ev);
 
                 // Valide les changement dans la base de données 
                 return (model.SaveChanges() > 0);

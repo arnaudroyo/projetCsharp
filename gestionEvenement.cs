@@ -126,6 +126,27 @@ namespace CsharpB2
             return listEvent;
         }
 
+        public List<personne> FindAllParticipants(evennement ev)
+        {
+
+            var listInscrit = model.inscris.Where(p => p.id_evennement.Equals(ev.id)).ToList();
+
+            List<personne> listParticipants = new List<personne>();
+            foreach (inscri i in listInscrit)
+            {
+                listParticipants.AddRange(model.personnes.Where(e => e.id.Equals(i.id_personne)).ToList());
+
+            }
+            return listParticipants;
+        }
+
+        public int CountAllParticipants(int idEvent)
+        {
+            evennement ev = RechercherEvennement(idEvent);
+            var listParticipants = FindAllParticipants(ev);
+            return listParticipants.Count();
+        }
+
 
         // Rechercher le créateur de l'event
         public string GetStatus(evennement Event)

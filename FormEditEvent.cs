@@ -45,6 +45,7 @@ namespace CsharpB2
 
                 if (eventClicked.id_createur == personneLogged.id)
                 {
+                    this.lvParticipant.Visible = true;
                     this.txtTitle.Enabled = true;
                     this.txtAddress.Enabled = true;
                     this.txtCity.Enabled = true;
@@ -52,6 +53,17 @@ namespace CsharpB2
                     this.dtDatePickerDate.Enabled = true;
                     this.btnOK.Enabled = true;
                 }
+            }
+
+            lvParticipant.Columns.Clear();
+            lvParticipant.Columns.Add(new ColumnHeader() { Name = "name", Text = "Last name", Width = 60 });
+            lvParticipant.Columns.Add(new ColumnHeader() { Name = "Fname", Text = "First Name", Width = 60 });
+            lvParticipant.Items.Clear();
+            var participants = manageEvent.FindAllParticipants(eventClicked);
+            
+            foreach (personne p in participants)
+            {
+                lvParticipant.AddParticipant(p);
             }
         }
 
@@ -88,7 +100,7 @@ namespace CsharpB2
 
                     eventClicked.nb_participant++;
                     manageEvent.ModifierEvennement(eventClicked);
-
+                    
                     MessageBox.Show("You now participate in this event", "registration succed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.DialogResult = DialogResult.Yes;

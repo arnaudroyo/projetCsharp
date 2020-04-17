@@ -182,12 +182,12 @@ namespace CsharpB2
             {
 
                 inscri registration = manageRegistration.RechercherInscription(eventclicked, personLogged);
-                if(registration != null)
+                if(registration != null )
                 {
                     // Validation du formulaire : modification dans la listview
                     if (manageRegistration.SupprimerInscription(registration) == true)
                     {
-                        if (lvEvennement2.RemoveEvent(eventclicked) == null)
+                        if (lvEvennement2.RemoveEvent(eventclicked) == null && lvEvennement.UpdateEvent(eventclicked) == null)
                         {
                             MessageBox.Show("Your unregistration has failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -252,6 +252,32 @@ namespace CsharpB2
             }
             return lvi;
         }
+
+
+        public static ListViewItem AddParticipant(this ListView lv, personne participant)
+        {
+            if (participant == null)
+                return null;
+
+            ListViewItem lvi = new ListViewItem(new string[] {participant.nom, participant.prenom});
+            // On stocke l'objet Personne pour le réutiliser plus tard
+            lvi.Tag = participant;
+            lv.Items.Add(lvi);
+
+            return lvi;
+        }
+        /*public static ListViewItem RemoveParticipant(this ListView lv, personne participant)
+        {
+            if (evennement == null)
+                return null;
+
+            ListViewItem lvi = lv.FindItemWithText(evennement.id.ToString());
+            if (lvi != null)
+            {
+                lv.Items.Remove(lvi);
+            }
+            return lvi;
+        }*/
 
     }
 

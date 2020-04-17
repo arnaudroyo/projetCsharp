@@ -43,6 +43,7 @@
             this.participate = new System.Windows.Forms.Button();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.city = new System.Windows.Forms.Label();
+            this.lvParticipant = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -180,11 +181,25 @@
             this.city.TabIndex = 33;
             this.city.Text = "City";
             // 
+            // lvParticipant
+            // 
+            this.lvParticipant.FullRowSelect = true;
+            this.lvParticipant.GridLines = true;
+            this.lvParticipant.HideSelection = false;
+            this.lvParticipant.Location = new System.Drawing.Point(456, 12);
+            this.lvParticipant.Name = "lvParticipant";
+            this.lvParticipant.Size = new System.Drawing.Size(111, 365);
+            this.lvParticipant.TabIndex = 35;
+            this.lvParticipant.UseCompatibleStateImageBehavior = false;
+            this.lvParticipant.View = System.Windows.Forms.View.Details;
+            this.lvParticipant.Visible = false;
+            // 
             // FormEditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 389);
+            this.ClientSize = new System.Drawing.Size(577, 389);
+            this.Controls.Add(this.lvParticipant);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.city);
             this.Controls.Add(this.participate);
@@ -224,5 +239,6 @@
         private System.Windows.Forms.Button participate;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label city;
+        private System.Windows.Forms.ListView lvParticipant;
     }
 }
