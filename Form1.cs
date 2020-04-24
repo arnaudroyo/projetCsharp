@@ -21,11 +21,7 @@ namespace CsharpB2
         {
             InitializeComponent();
         }
-        public Form1(personne personneLogged)
-        {
-            InitializeComponent();
-            this.personLogged = personneLogged;
-        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,17 +32,10 @@ namespace CsharpB2
                 // Appel du formualire en mode "Modal"
                 if (login.ShowDialog() == DialogResult.OK && login.personneLogged != null)
                 {
-
                     this.personLogged = login.personneLogged;
                     Logged.Text = "Bonjour " + this.personLogged.prenom;
-
                 }
-                else
-                    this.Close();
             }
-          
-        
-          
 
             var evennements = gestionEvent.TrouverTousLesEvennements();
 

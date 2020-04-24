@@ -21,13 +21,7 @@ namespace CsharpB2
             InitializeComponent();
         }
 
- 
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -40,7 +34,6 @@ namespace CsharpB2
                 if (personneLogged != null)
                     {
                     this.DialogResult = DialogResult.OK;
-
                 }
                 else
                 {
@@ -53,10 +46,6 @@ namespace CsharpB2
             }
         }
 
-        private void btnCancel_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void Signin_Load(object sender, EventArgs e)
         {
@@ -67,6 +56,13 @@ namespace CsharpB2
         {
             Signup SignUpForm = new Signup();
             SignUpForm.ShowDialog();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Environment.Exit(1);
+
         }
     }
 }
