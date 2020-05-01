@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CsharpB2
 {
-    class GestionPersonne
+    public class GestionPersonne
     {
         private Model1 model = new Model1();
         // Rechercher une personne avec mail et mdp

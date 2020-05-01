@@ -87,6 +87,7 @@ namespace CsharpB2
             return null;
         }
 
+
         public inscri RechercherInscription(evennement Event, personne person)
         {
             try

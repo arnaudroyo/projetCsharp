@@ -44,6 +44,7 @@
             this.txtCity = new System.Windows.Forms.TextBox();
             this.city = new System.Windows.Forms.Label();
             this.lvParticipant = new System.Windows.Forms.ListView();
+            this.deleteEvent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -194,11 +195,24 @@
             this.lvParticipant.View = System.Windows.Forms.View.Details;
             this.lvParticipant.Visible = false;
             // 
+            // deleteEvent
+            // 
+            this.deleteEvent.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.deleteEvent.Location = new System.Drawing.Point(352, 12);
+            this.deleteEvent.Name = "deleteEvent";
+            this.deleteEvent.Size = new System.Drawing.Size(98, 36);
+            this.deleteEvent.TabIndex = 36;
+            this.deleteEvent.Text = "Delete this event";
+            this.deleteEvent.UseVisualStyleBackColor = true;
+            this.deleteEvent.Visible = false;
+            this.deleteEvent.Click += new System.EventHandler(this.deleteEvent_Click);
+            // 
             // FormEditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 389);
+            this.Controls.Add(this.deleteEvent);
             this.Controls.Add(this.lvParticipant);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.city);
@@ -240,5 +254,6 @@
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label city;
         private System.Windows.Forms.ListView lvParticipant;
+        private System.Windows.Forms.Button deleteEvent;
     }
 }

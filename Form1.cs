@@ -158,6 +158,16 @@ namespace CsharpB2
 
                 }*/
             }
+            else if (form.DialogResult == DialogResult.No)
+            {
+                lvEvennement2.RemoveEvent(eventclicked);
+                lvEvennement.RemoveEvent(eventclicked);
+                /*                if (lvEvennement2.AddEvennement(eventclicked) == null && lvEvennement.UpdateEvent(eventclicked) == null);
+                                {
+                                    MessageBox.Show("Prob to update ur registration", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                }*/
+            }
 
         }
 

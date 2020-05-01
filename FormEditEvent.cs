@@ -46,6 +46,7 @@ namespace CsharpB2
                 if (eventClicked.id_createur == personneLogged.id)
                 {
                     this.lvParticipant.Visible = true;
+                    this.deleteEvent.Visible = true;
                     this.txtTitle.Enabled = true;
                     this.txtAddress.Enabled = true;
                     this.txtCity.Enabled = true;
@@ -116,6 +117,27 @@ namespace CsharpB2
                 MessageBox.Show("You already participate in this event", "registration ok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+        }
+
+        private void deleteEvent_Click(object sender, EventArgs e)
+        {
+
+            evennement ev = manageEvent.RechercherEvennement(eventClicked.id);
+
+
+            var listParticipant = manageEvent.FindAllParticipants(ev);
+
+            foreach(personne p in listParticipant)
+            {
+                inscri inscription = manageInscription.RechercherInscription(ev, p);
+                manageInscription.SupprimerInscription(inscription);
+
+            }
+
+            manageEvent.SupprimerEvennement(ev);
+
+            this.DialogResult = DialogResult.No;
+
         }
     }
 }

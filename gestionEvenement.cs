@@ -24,8 +24,9 @@ namespace CsharpB2
         // Ajouter un enregistrement
         public evennement AjouterEvennement(evennement evennement)
         {
-            // Ajoute le produit à l'ORM EF 
-            model.evennements.Add(evennement);
+
+        // Ajoute le produit à l'ORM EF 
+        model.evennements.Add(evennement);
 
             // Valide les changement dans la base de données 
             try

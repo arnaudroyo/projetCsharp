@@ -17,16 +17,13 @@ namespace CsharpB2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //personne p1 = new personne(3, "test", "test", "test", "test", "test");
-            Application.Run(new Form1());
-            GestionEvenement gestion;
+            GestionEvenement gestion = new GestionEvenement();
 
-         /*   evennement evennement = new evennement("PGW", 5, 500, "8 rue de ","Paris", "france", new DateTime(2019, 07, 04, 0,0,0), 400, 1);
-            evennement evennement2 = new evennement("foire du village", 6, 500,"au village" , "Paris", "france", new DateTime(2019, 07, 04, 0, 0, 0), 0, 1);
-            evennement evennement3 = new evennement("coronavirus", 7, 6000000, "partout", "Paris", "france", new DateTime(2019, 7, 04, 0, 0, 0), 10000, 1);
-            gestion.AjouterEvennement(evennement);
-            gestion.AjouterEvennement(evennement2);
-            gestion.AjouterEvennement(evennement3);
-            */
+            gestion.SupprimerEvennement(9);
+
+            Application.Run(new Form1());
+
+
         }
     }
 }
